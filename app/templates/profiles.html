@@ -1,0 +1,31 @@
+{% extends "base.html"%}
+
+{% block main%}
+<div>
+    <h1> User Profiles </h1>
+    <div>
+        {% include "flash_messages.html"%}
+    </div>
+    {% if profiles != []%}
+    <div>
+        {% for profile in profiles%}
+        <div>
+            <img src="{{ url_for('static',filename='uploads/'+profile.image) }}">
+            <div>
+                <h4>{{profile.first_name}} {{profile.last_name}}</h4>
+                <p>{{profile.gender}}</p>
+                <p>{{profile.location}}</p>
+            </div>
+            <div>
+                <a href = "{{url_for('profile')+'/{0}'.format(profile.id)}}"><button> View Profile</button></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div>
+        <h4>No profiles to list</h4>
+    </div>
+    {% endif %}
+</div>
+{% endblock%}

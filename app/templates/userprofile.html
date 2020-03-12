@@ -1,0 +1,37 @@
+{% extends "base.html"%}
+
+{% block main%}
+<h1> userprofiles page</h1>
+<div>
+    <div>
+        {% include "flash_messages.html"%}
+    </div>
+    {% if not profile == None%}
+    <div>
+        <div>
+            <img src="{{ url_for('static',filename='uploads/'+profile.image) }}">
+            <div>
+                <h2>{{ profile.first_name}} {{ profile.last_name}}</h2>
+                <p>{{profile.email}}</p>
+                <p>{{profile.location}}</p>
+                <p>{{profile.creation_date.strftime("%A %d,%Y")}}</p>
+            </div>
+        </div>
+        <div>
+            <p>About Me</p>
+            <p>{{profile.biography}}</p>
+        </div>
+        <div>
+            <button>send Message</button>
+            <button>follow</button>
+        </div>
+    </div>
+    {% else %}
+    <div>
+        <h4> The user profile doesn't exist</h4>
+    </div>
+    {% endif %}
+
+
+</div>
+{% endblock%}
