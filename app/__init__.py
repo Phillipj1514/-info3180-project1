@@ -14,3 +14,4 @@ db = SQLAlchemy(app)
 app.config.from_object(__name__)
 
 from app import views
+# testing commits
