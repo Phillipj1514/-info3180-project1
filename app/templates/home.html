@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 
 {% block main %}
-<h1 class="page-header">The start of something big</h1>
+<h1 class="page-header">Welcome to Project 1</h1>
+<h3> How to get started</h3>
+<ul>
+    <li>To add a user Profile <a href ="{{url_for('profile')}}">click me</a></li>
+    <li>To add view all user profiles <a href ="{{url_for('profiles')}}">click me</a></li>
+    <li>To view a specific user profile visit => website_url/profile/(user id)</li>
+</ul>
 
 {% endblock %}
