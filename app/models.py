@@ -17,6 +17,7 @@ class Profiles(db.Model):
         self.first_name = first_name
         self.last_name = last_name
         self.gender = gender
+        self.email = email
         self.location = location
         self.biography = biography
         self.image = image
