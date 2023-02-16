@@ -7,7 +7,7 @@ Flask-SQLAlchemy
 Flask-Migrate
 Flask-Script
 Flask-Login
-Werkzeug==1.0.0
+Werkzeug==2.2.3
 psycopg2
 
 # ----------------------
